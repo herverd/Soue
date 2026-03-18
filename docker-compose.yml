@@ -1,0 +1,25 @@
+services:
+  api:
+    build: ./src/Web.Api
+    container_name: rpa_api_container
+    restart: always
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:8080
+      - ConnectionStrings__DefaultConnection=Data Source=/app/data/rpa.db
+    volumes:
+      - db_volume:/app/data
+
+  worker:
+    build: ./src/Rpa.Worker
+    container_name: rpa_worker_container
+    restart: always
+    volumes:
+      - db_volume:/app/data
+    environment:
+      - ConnectionStrings__DefaultConnection=Data Source=/app/data/rpa.db
+
+volumes:
+  db_volume:
