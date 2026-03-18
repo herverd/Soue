@@ -20,11 +20,12 @@ A solução foi desenhada seguindo princípios de **Separação de Responsabilid
 
 ### Passo a Passo
 1. Clone este repositório:
-   ```bash
-   git clone [https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git](https://github.com/SEU_USUARIO/NOME_DO_REPOSITORIO.git)
-   cd NOME_DO_REPOSITORIO
+   bash
+   git clone https://github.com/herverd/Soue.git
+   cd Soue
    
 2. Inicie o sistema:
+	bash
 	docker-compose up --build
 	
 3. Acesse os serviços:
